@@ -17,6 +17,7 @@ function BudgetDetails(props) {
   useEffect(() => {
     axios.get(`${API}/budgets/${index}`).then(
       (response) => {
+        console.log(response)
         setBudget(response.data);
       },
       (error) => {

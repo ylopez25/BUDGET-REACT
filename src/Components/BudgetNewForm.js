@@ -7,17 +7,11 @@ function BudgetNewForm(props) {
     date: "",
     amount: "",
     from: ''
-    // isFavorite: false,
-    // description: "",
   });
 
   const handleTextChange = (event) => {
     setBudget({ ...budget, [event.target.id]: event.target.value });
   };
-
-//   const handleCheckboxChange = () => {
-//     setBudget({ ...budget, isFavorite: !bookmark.isFavorite });
-//   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,8 +37,7 @@ function BudgetNewForm(props) {
         <label htmlFor="amount">Amount:</label>
         <input
          id="amount"
-          type="number"
-        //   pattern="http[s]*://.+"
+        type="number"
         value={budget.amount}
         placeholder="$$"
         onChange={handleTextChange}
@@ -56,7 +49,6 @@ function BudgetNewForm(props) {
         <input
           id="date"
           type="date"
-          // name="category"
          value={budget.date}
           placeholder="date"
           onChange={handleTextChange}
@@ -69,7 +61,6 @@ function BudgetNewForm(props) {
         <textarea
         rows="4" cols="40"
           id="from"
-          // name="description"
           value={budget.from}
           onChange={handleTextChange}
           placeholder="Where this expense/income has come from"

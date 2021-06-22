@@ -2,7 +2,6 @@ import { apiURL } from "./util/apiURL";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
-//import { v4 as uuidv4 } from 'uuid';
 
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
@@ -11,24 +10,14 @@ import New from "./Pages/New";
 import Show from "./Pages/Show";
 import './App.css'
 
-
-
 import NavBar from './Components/NavBar';
 const API = apiURL();
 
 function App() {
 const [budgets, setBudgets] = useState([]);
 
-
-// const total = ([...budgets])
-// total.reduce(function(add, budget) {
-//   return add + budget.amount
-// },0 )
-// console.log(total)
-
-
 const addBudget = (newBudget) => {
-  axios.get(`${API}/budgets`, newBudget).then((response) => {
+  axios.post(`${API}/budgets`, newBudget).then((response) => {
     setBudgets([...budgets, newBudget])
   }).catch((err) => {
     console.log(err)
